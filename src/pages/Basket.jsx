@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { BasketContext } from "../Context/BasketProvider";
 
 function Basket() {
-  const { basket } = useContext(BasketContext);
+  const { basket, removeAtBasket } = useContext(BasketContext);
 
   return (
     <>
@@ -11,6 +11,7 @@ function Basket() {
         <ul>
           {console.log(x)}
           <li>{x.name}</li>
+          <button onClick={() => removeAtBasket(x)}>X</button>
         </ul>
       ))}
     </>

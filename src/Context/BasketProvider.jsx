@@ -18,9 +18,16 @@ function BasketProvider({ children }) {
     }
   }
 
+  function removeAtBasket(item) {
+     setbasket(basket.filter((x) => x.id !== item.id));
+    
+  }
+
   return (
     <>
-      <BasketContext.Provider value={{ basket, setbasket, AddtoBasket }}>
+      <BasketContext.Provider
+        value={{ basket, setbasket, AddtoBasket, removeAtBasket }}
+      >
         {children}
       </BasketContext.Provider>
     </>
