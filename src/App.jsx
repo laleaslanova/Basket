@@ -4,20 +4,25 @@ import Layout from "./Layout/Layout";
 import Home from "./pages/Home";
 import Basket from "./pages/Basket";
 import BasketProvider from "./Context/BasketProvider";
+import WishListProvider from "./Context/WishListProvider";
+import WishList from "./pages/WishList";
 
 function App() {
   return (
     <>
-      <BasketProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="basket" element={<Basket />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </BasketProvider>
+      <WishListProvider>
+        <BasketProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="basket" element={<Basket />} />
+                <Route path="wishlist" element={<WishList />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </BasketProvider>
+      </WishListProvider>
     </>
   );
 }

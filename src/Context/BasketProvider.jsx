@@ -10,11 +10,11 @@ function BasketProvider({ children }) {
     const itemindex = basket.findIndex((x) => x.id === item.id);
 
     if (itemindex === -1) {
-      setbasket([...basket, { item, count: 1 }]);
+      setbasket([...basket, { ...item, count: 1 }]);
     } else {
       const newBasket = [...basket];
       newBasket[itemindex].count += 1;
-      setbasket[newBasket];
+      setbasket(newBasket);
     }
   }
 
